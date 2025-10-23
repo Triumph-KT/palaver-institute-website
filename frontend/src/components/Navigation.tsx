@@ -64,7 +64,8 @@ export function Navigation() {
     if (href === '/') {
       return pathname === '/';
     }
-    return pathname.startsWith(href.split('#')[0]);
+    const basePath = href.split('#')[0] || href;
+    return pathname.startsWith(basePath);
   };
   
   /**
