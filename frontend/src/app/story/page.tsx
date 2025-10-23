@@ -1,41 +1,11 @@
 import { ContactForm } from '@/components/ContactForm';
+import { Navigation } from '@/components/Navigation';
 
 export default function Story() {
   return (
     <div>
       {/* Navigation */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <img src="/logo.png" alt="Palaver Institute" className="logo-img" />
-          </div>
-          <ul className="nav-menu">
-            <li className="nav-item">
-              <a href="/" className="nav-link">Home</a>
-            </li>
-            <li className="nav-item">
-              <a href="/#about" className="nav-link">About</a>
-            </li>
-            <li className="nav-item">
-              <a href="/story" className="nav-link active">Story</a>
-            </li>
-            <li className="nav-item">
-              <a href="/#research" className="nav-link">Research</a>
-            </li>
-            <li className="nav-item">
-              <a href="/team" className="nav-link">Team</a>
-            </li>
-            <li className="nav-item">
-              <a href="/#contact" className="nav-link">Contact</a>
-            </li>
-          </ul>
-          <div className="hamburger">
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Story Hero Section */}
       <section className="story-hero">

@@ -2,7 +2,6 @@
 const nextConfig = {
   // Enable experimental features for better performance
   experimental: {
-    appDir: true,
     typedRoutes: true,
   },
   

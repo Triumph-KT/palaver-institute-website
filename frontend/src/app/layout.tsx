@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://palaverinstitute.org'),
   title: 'Palaver Institute - Where African Minds Convene to Solve Global Challenges',
   description: 'Building intellectual sovereignty through indigenous-centered research and pan-African collaboration.',
   keywords: [
