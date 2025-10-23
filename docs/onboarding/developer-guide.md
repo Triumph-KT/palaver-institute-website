@@ -1,417 +1,576 @@
-# Developer Onboarding Guide
+# 🚀 Palaver Institute Developer Onboarding Guide
 
-Welcome to the Palaver Institute development team! This guide will help you get up and running with our codebase and development practices.
+Welcome to the Palaver Institute development team! This guide will get you up and running with our **live, production website** and development practices.
 
-## 🎯 Project Overview
+## 🌟 **CURRENT PROJECT STATUS (October 2025)**
 
-The Palaver Institute platform is a comprehensive system for managing research, fellows, directors, and alumni. We're building intellectual sovereignty through indigenous-centered research and pan-African collaboration.
+### ✅ **WHAT'S ALREADY LIVE:**
+- **🌍 Production Website**: https://palaverinstitute.org (SSL secured)
+- **📱 Mobile Responsive**: Perfect mobile navigation with working hamburger menu
+- **🚀 Auto-Deployment**: Push to GitHub = Live in 2-5 minutes
+- **⚡ Global CDN**: Fast loading worldwide via Netlify
+- **🎨 Professional Design**: African-inspired branding and modern UI
 
-### Architecture
-- **Frontend**: Next.js 14 with TypeScript (SEO-optimized)
-- **Backend**: FastAPI with SQLAlchemy (Python)
-- **Database**: PostgreSQL (production) / SQLite (development)
-- **Deployment**: Vercel (frontend) + backend hosting
-- **Monorepo**: Organized for scalability and team collaboration
-
-## 🚀 Quick Start
-
-### Prerequisites
-```bash
-# Required software
-Node.js 18+
-Python 3.9+
-Git
-PostgreSQL (for production setup)
-```
-
-### Initial Setup
-```bash
-# 1. Clone the repository
-git clone <repository-url>
-cd palaver-institute
-
-# 2. Install all dependencies
-npm run setup
-
-# 3. Setup environment variables
-cp .env.example .env.local
-# Edit .env.local with your configuration
-
-# 4. Initialize database
-npm run db:init
-
-# 5. Start development servers
-npm run dev
-```
-
-This starts:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
-- API Docs: http://localhost:8000/docs
-
-## 📁 Project Structure
-
+### 🏗️ **CURRENT ARCHITECTURE:**
 ```
 palaver-institute/
-├── frontend/                 # Next.js application
-│   ├── src/
-│   │   ├── app/             # App router pages
-│   │   ├── components/      # Reusable UI components
-│   │   ├── lib/             # Utilities and configurations
-│   │   ├── types/           # TypeScript type definitions
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── contexts/        # React context providers
-│   │   └── styles/          # Global styles and themes
-│   └── public/              # Static assets
-│
-├── backend/                  # FastAPI application
-│   ├── api/
-│   │   ├── routes/          # API route handlers
-│   │   └── dependencies/    # Dependency injection
-│   ├── database/            # Database configuration
-│   ├── models/              # SQLAlchemy models
-│   ├── schemas/             # Pydantic schemas
-│   ├── services/            # Business logic
-│   ├── utils/               # Utility functions
-│   └── tests/               # Backend tests
-│
-├── shared/                   # Shared code and types
-│   ├── types/               # TypeScript interfaces
-│   ├── constants/           # Shared constants
-│   └── utils/               # Shared utilities
-│
-└── docs/                     # Documentation
-    ├── onboarding/          # Developer guides
-    ├── features/            # Feature specifications
-    ├── api/                 # API documentation
-    └── deployment/          # Deployment guides
+├── frontend/          # Next.js 14 + TypeScript (LIVE ✅)
+│   ├── src/app/       # App Router pages (deployed)
+│   ├── src/components/ # React components (working)
+│   └── public/        # Static assets + logo
+├── backend/           # FastAPI setup (MVP ready 🔄)
+├── docs/              # Documentation (comprehensive)
+└── legacy-html/       # Original HTML (archived)
 ```
 
-## 🔧 Development Workflow
+## 🎯 **PROJECT OVERVIEW**
 
-### 1. Creating New Features
+The Palaver Institute platform is building **intellectual sovereignty through indigenous-centered research and pan-African collaboration**. We're currently in the **MVP expansion phase** - moving from a successful frontend-only website to a full-stack application.
 
+### **Mission**: Where African Minds Convene to Solve Global Challenges
+### **Vision**: Decolonize human intelligence research through African epistemologies
+### **Current Focus**: Application management system for Directors and Fellows
+
+---
+
+## 🚀 **DEVELOPER QUICK START**
+
+### **Prerequisites**
 ```bash
-# 1. Create a feature branch
+# Required software
+Node.js 18+ (https://nodejs.org/)
+Git (https://git-scm.com/)
+Code Editor (VS Code recommended)
+GitHub account with access to repository
+```
+
+### **1. Clone and Setup**
+```bash
+# Clone the repository
+git clone https://github.com/Triumph-KT/palaver-institute-website.git
+cd palaver-institute
+
+# Install frontend dependencies
+cd frontend
+npm install
+
+# Start development server
+npm run dev
+# Visit http://localhost:3000
+```
+
+### **2. Understand the Current Deployment**
+- **Live Site**: https://palaverinstitute.org
+- **Deployment**: Automatic via Netlify (connected to main branch)
+- **Domain**: Custom domain with SSL certificate
+- **Updates**: Push to `main` branch = Live in 2-5 minutes
+
+### **3. Development Workflow**
+```bash
+# Create feature branch (we'll use mvp-branch for main development)
 git checkout -b feature/your-feature-name
 
-# 2. Make your changes following our conventions
-# - Add tests for new functionality
-# - Update documentation if needed
-# - Follow code style guidelines
+# Make your changes
+# Edit files in frontend/src/
 
-# 3. Test your changes
-npm run test
-npm run lint
+# Test locally
+npm run dev
 
-# 4. Commit with conventional commits
-git commit -m "feat: add user profile management"
-
-# 5. Push and create pull request
+# Commit and push
+git add .
+git commit -m "feat: your feature description"
 git push origin feature/your-feature-name
+
+# Create Pull Request to merge into mvp-branch
 ```
 
-### 2. Code Style Guidelines
+---
 
-#### TypeScript/JavaScript
-```typescript
-// ✅ Good: Clear naming and documentation
-/**
- * Validates user application data and returns formatted errors
- * @param applicationData - The application form data to validate
- * @returns Promise resolving to validation result
- */
-async function validateApplication(
-  applicationData: ApplicationForm
-): Promise<ValidationResult> {
-  // Implementation here
-}
+## 📁 **CURRENT PROJECT STRUCTURE**
 
-// ❌ Bad: Unclear naming and no documentation
-async function validate(data: any): Promise<any> {
-  // Implementation here
-}
+### **Frontend (LIVE and Working) ✅**
+```
+frontend/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── page.tsx           # Homepage (LIVE)
+│   │   ├── story/page.tsx     # Story page (LIVE)
+│   │   ├── team/page.tsx      # Team page (LIVE)
+│   │   ├── layout.tsx         # Root layout
+│   │   └── globals.css        # Global styles (African-inspired colors)
+│   └── components/            # React components
+│       ├── Navigation.tsx     # Mobile-friendly navigation (WORKING)
+│       ├── ContactForm.tsx    # Contact form (needs backend)
+│       └── sections/          # Page sections
+├── public/
+│   └── logo.png              # Palaver Institute logo
+├── package.json              # Dependencies
+├── next.config.js            # Next.js config (static export)
+├── tailwind.config.js        # Tailwind CSS config
+└── tsconfig.json             # TypeScript config
 ```
 
-#### Python
-```python
-# ✅ Good: Clear docstrings and type hints
-async def create_application(
-    application_data: ApplicationCreate,
-    user: User,
-    db: AsyncSession
-) -> Application:
-    """
-    Create a new application for a user.
-    
-    Args:
-        application_data: The application data to create
-        user: The user creating the application
-        db: Database session
-        
-    Returns:
-        The created application instance
-        
-    Raises:
-        ValueError: If application data is invalid
-    """
-    # Implementation here
-
-# ❌ Bad: No documentation or type hints
-async def create_app(data, user, db):
-    # Implementation here
+### **Backend (MVP Ready) 🔄**
+```
+backend/
+├── main.py                   # FastAPI entry point
+├── requirements.txt          # Python dependencies
+└── requirements-simple.txt   # Minimal requirements for MVP
 ```
 
-### 3. Database Changes
-
-```bash
-# 1. Modify models in backend/models/
-# 2. Generate migration
-cd backend && alembic revision --autogenerate -m "Add user profile fields"
-
-# 3. Review the generated migration
-# 4. Apply migration
-npm run db:migrate
-
-# 5. Update corresponding TypeScript types in shared/types/
+### **Documentation (Comprehensive) 📚**
+```
+docs/
+├── onboarding/
+│   └── developer-guide.md    # This file
+├── features/
+│   ├── mvp-roadmap.md       # Development roadmap
+│   └── director-dashboard.md # Dashboard specifications
+└── deployment/              # Deployment guides
 ```
 
-### 4. Testing
+---
 
-```bash
-# Run all tests
-npm run test
+## 🎨 **DESIGN SYSTEM & BRAND**
 
-# Run specific test suites
-npm run test:frontend
-npm run test:backend
-
-# Run tests in watch mode during development
-npm run test:watch
-```
-
-## 🎨 UI/UX Guidelines
-
-### Design System
-We use a consistent design system based on African-inspired colors and modern UI principles.
-
+### **African-Inspired Color Palette**
 ```css
-/* Primary colors from our brand */
---primary-orange: #C17A47;
---secondary-orange: #D4924F;
---accent-blue: #4A6B8A;
---deep-blue: #2D4B6B;
---warm-purple: #7A5B8A;
+:root {
+  /* Primary brand colors */
+  --primary-orange: #C17A47;     /* Main brand color */
+  --secondary-orange: #D4924F;   /* Secondary accent */
+  --accent-blue: #4A6B8A;        /* Professional blue */
+  --deep-blue: #2D4B6B;          /* Navigation/headers */
+  --warm-purple: #7A5B8A;        /* Accent color */
+  --earth-brown: #8B5A3C;        /* Supporting color */
+  --light-cream: #F5F1EB;        /* Background/sections */
+}
 ```
 
-### Component Structure
+### **Typography & Fonts**
+- **Font Family**: Inter (Google Fonts)
+- **Headings**: Bold weights (600-700)
+- **Body Text**: Regular (400) and Medium (500)
+- **Mobile First**: Responsive scaling
+
+### **Component Patterns**
 ```typescript
 // ✅ Good component structure
-interface UserCardProps {
-  user: User;
-  onEdit?: (user: User) => void;
+interface ComponentProps {
+  title: string;
+  children?: React.ReactNode;
   className?: string;
 }
 
 /**
- * UserCard displays user information in a consistent card format
- * Used throughout the application for user listings and profiles
+ * Reusable component following our design system
+ * Used throughout the application for consistency
  */
-export function UserCard({ user, onEdit, className }: UserCardProps) {
+export function CustomComponent({ title, children, className }: ComponentProps) {
   return (
-    <div className={`card ${className}`}>
-      {/* Component implementation */}
+    <div className={`bg-palaver-cream-light rounded-lg p-6 ${className}`}>
+      <h2 className="text-palaver-orange-primary font-bold text-xl mb-4">
+        {title}
+      </h2>
+      {children}
     </div>
   );
 }
 ```
-
-### Accessibility
-- Use semantic HTML elements
-- Include proper ARIA labels
-- Ensure keyboard navigation works
-- Maintain color contrast ratios
-- Test with screen readers
-
-## 🔐 Security Best Practices
-
-### Authentication
-```typescript
-// ✅ Always validate user permissions
-async function updateApplication(id: string, data: ApplicationUpdate) {
-  const user = await getCurrentUser();
-  const application = await getApplication(id);
-  
-  // Check permissions before allowing update
-  if (!canUserEditApplication(user, application)) {
-    throw new UnauthorizedError('Cannot edit this application');
-  }
-  
-  return await updateApplicationData(id, data);
-}
-```
-
-### Data Validation
-```python
-# ✅ Always validate input data
-from pydantic import BaseModel, validator
-
-class ApplicationCreate(BaseModel):
-    position_applied: str
-    motivation_letter: str
-    
-    @validator('motivation_letter')
-    def validate_motivation_letter(cls, v):
-        if len(v) < 100:
-            raise ValueError('Motivation letter must be at least 100 characters')
-        return v
-```
-
-## 📊 Performance Guidelines
-
-### Frontend Optimization
-```typescript
-// ✅ Use React.memo for expensive components
-const ExpensiveUserList = React.memo(({ users }: { users: User[] }) => {
-  return (
-    <div>
-      {users.map(user => (
-        <UserCard key={user.id} user={user} />
-      ))}
-    </div>
-  );
-});
-
-// ✅ Implement proper loading states
-function UserDashboard() {
-  const { data: users, isLoading, error } = useUsers();
-  
-  if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage error={error} />;
-  
-  return <ExpensiveUserList users={users} />;
-}
-```
-
-### Backend Optimization
-```python
-# ✅ Use database indexes for frequent queries
-class User(Base):
-    __tablename__ = "users"
-    
-    id = Column(Integer, primary_key=True)
-    email = Column(String, unique=True, index=True)  # Indexed for lookups
-    role = Column(Enum(UserRole), index=True)        # Indexed for filtering
-
-# ✅ Use pagination for large datasets
-async def get_applications(
-    skip: int = 0, 
-    limit: int = 20,
-    db: AsyncSession = Depends(get_db)
-) -> List[Application]:
-    return await db.execute(
-        select(Application)
-        .offset(skip)
-        .limit(limit)
-        .order_by(Application.created_at.desc())
-    ).scalars().all()
-```
-
-## 🐛 Debugging and Troubleshooting
-
-### Common Issues
-
-#### 1. Database Connection Errors
-```bash
-# Check if PostgreSQL is running
-sudo systemctl status postgresql
-
-# Reset database if needed
-npm run db:reset
-npm run db:seed
-```
-
-#### 2. Frontend Build Errors
-```bash
-# Clear Next.js cache
-rm -rf .next
-npm run build
-
-# Check for TypeScript errors
-npm run type-check
-```
-
-#### 3. API Connection Issues
-```bash
-# Verify backend is running
-curl http://localhost:8000/health
-
-# Check environment variables
-cat .env.local
-```
-
-### Debugging Tools
-- **Frontend**: React DevTools, Next.js DevTools
-- **Backend**: FastAPI automatic docs at `/docs`
-- **Database**: PostgreSQL logs, SQLAlchemy echo mode
-- **Network**: Browser DevTools Network tab
-
-## 📚 Learning Resources
-
-### Required Reading
-1. **Next.js Documentation**: https://nextjs.org/docs
-2. **FastAPI Documentation**: https://fastapi.tiangolo.com/
-3. **SQLAlchemy Documentation**: https://docs.sqlalchemy.org/
-4. **React Query Documentation**: https://tanstack.com/query/latest
-
-### Recommended Learning Path
-1. **Week 1**: Understand project structure and run local setup
-2. **Week 2**: Complete a small feature (e.g., add a new field to user profile)
-3. **Week 3**: Work on a medium feature (e.g., implement a new dashboard widget)
-4. **Week 4**: Contribute to a major feature with mentorship
-
-### Code Review Checklist
-- [ ] Code follows style guidelines
-- [ ] Tests are included and passing
-- [ ] Documentation is updated
-- [ ] Performance considerations addressed
-- [ ] Security best practices followed
-- [ ] Accessibility requirements met
-- [ ] Error handling implemented
-- [ ] TypeScript types are accurate
-
-## 🤝 Getting Help
-
-### Team Communication
-- **Daily Standups**: 9 AM EAT (East Africa Time)
-- **Code Reviews**: All PRs require at least one approval
-- **Architecture Decisions**: Discuss in team meetings
-- **Urgent Issues**: Use team Slack channel
-
-### Mentorship Program
-- **New Developers**: Assigned a senior developer mentor
-- **Interns**: Structured learning path with regular check-ins
-- **Code Pairing**: Regular pair programming sessions
-- **Knowledge Sharing**: Weekly tech talks and learning sessions
-
-### Resources
-- **Internal Wiki**: Detailed technical documentation
-- **Code Examples**: Reference implementations in the codebase
-- **Video Tutorials**: Screen recordings of common workflows
-- **Office Hours**: Weekly open Q&A sessions with tech leads
-
-## 🎯 Next Steps
-
-After completing this guide:
-
-1. **Set up your development environment** following the Quick Start
-2. **Read through the codebase** to understand existing patterns
-3. **Pick up your first issue** labeled `good-first-issue`
-4. **Schedule a mentorship session** with your assigned mentor
-5. **Join the team communication channels**
-
-Welcome to the team! We're excited to have you contribute to building the intellectual infrastructure for African independence.
 
 ---
 
-**Questions?** Reach out to the development team lead or create an issue in the repository.
+## 🔄 **DEVELOPMENT WORKFLOW**
+
+### **Current Branching Strategy**
+- **`main`**: Production branch (auto-deploys to https://palaverinstitute.org)
+- **`mvp-branch`**: Main development branch for new features
+- **`feature/*`**: Individual feature branches (merge to mvp-branch)
+
+### **Making Changes to Live Website**
+```bash
+# For urgent fixes to live site
+git checkout main
+git pull origin main
+
+# Make your fix
+# Edit files, test locally
+
+# Push directly to main (goes live immediately)
+git add .
+git commit -m "fix: urgent issue description"
+git push origin main
+# Live in 2-5 minutes at https://palaverinstitute.org
+```
+
+### **Making New Features**
+```bash
+# For new features and development
+git checkout mvp-branch
+git pull origin mvp-branch
+
+# Create feature branch
+git checkout -b feature/user-authentication
+
+# Develop your feature
+# Test thoroughly locally
+
+# Push and create PR to mvp-branch
+git add .
+git commit -m "feat: add user authentication system"
+git push origin feature/user-authentication
+# Create Pull Request to merge into mvp-branch
+```
+
+---
+
+## 🛠️ **DEVELOPMENT TOOLS & COMMANDS**
+
+### **Frontend Development**
+```bash
+cd frontend
+
+# Development server (hot reload)
+npm run dev              # http://localhost:3000
+
+# Production build (test before deploying)
+npm run build            # Builds static site
+
+# Type checking
+npm run type-check       # Check TypeScript errors
+
+# Linting
+npm run lint             # ESLint + Prettier
+
+# Start production build locally
+npm run start            # Test production build
+```
+
+### **Useful Development Commands**
+```bash
+# Check current branch and status
+git status
+git branch -a
+
+# See recent commits
+git log --oneline -10
+
+# Test build locally before pushing
+cd frontend && npm run build
+
+# View live deployment logs (Netlify dashboard)
+# Visit: https://app.netlify.com (login required)
+```
+
+---
+
+## 📱 **RESPONSIVE DESIGN & MOBILE**
+
+### **Mobile Navigation (Recently Fixed) ✅**
+- **Hamburger Menu**: Fully functional on mobile devices
+- **Touch Targets**: Optimized for mobile interaction
+- **Smooth Animations**: Menu slides in/out properly
+- **Auto-Close**: Menu closes when navigating to new pages
+
+### **Responsive Breakpoints**
+```css
+/* Mobile first approach */
+.container {
+  padding: 1rem;          /* Mobile */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;        /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 3rem;        /* Desktop */
+  }
+}
+```
+
+### **Testing Responsive Design**
+```bash
+# Always test on actual devices
+# Use browser dev tools for initial testing
+# Test these breakpoints: 320px, 768px, 1024px, 1920px
+```
+
+---
+
+## 🚀 **DEPLOYMENT & PRODUCTION**
+
+### **Current Deployment Setup (Netlify)**
+- **Platform**: Netlify (automatic deployments)
+- **Domain**: palaverinstitute.org (custom domain)
+- **SSL**: Let's Encrypt (auto-renewal)
+- **Build Command**: `npm run build` (in frontend directory)
+- **Deploy Previews**: Available for pull requests (paid feature)
+
+### **Deployment Process**
+```bash
+# Automatic deployment (main branch only)
+git push origin main
+# Triggers: Build → Deploy → Live (2-5 minutes)
+
+# Manual deployment (if needed)
+# 1. Go to Netlify dashboard
+# 2. Click "Deploy site"
+# 3. Drag and drop frontend/out folder
+```
+
+### **Environment Variables**
+```bash
+# For local development
+cp env.example .env.local
+# Edit .env.local with your configuration
+
+# For production (Netlify dashboard)
+# Set environment variables in Netlify dashboard
+# Site Settings → Environment Variables
+```
+
+---
+
+## 🎯 **MVP ROADMAP & NEXT STEPS**
+
+### **Phase 1: Frontend Foundation ✅ (COMPLETED)**
+- ✅ Professional website design
+- ✅ Mobile responsive navigation
+- ✅ Custom domain with SSL
+- ✅ Automatic deployment pipeline
+- ✅ SEO optimization
+
+### **Phase 2: Backend Integration (CURRENT FOCUS)**
+- 🔄 FastAPI backend setup
+- 🔄 Database design (SQLite → PostgreSQL)
+- 🔄 User authentication (JWT)
+- 🔄 Contact form functionality
+- 🔄 Application submission system
+
+### **Phase 3: Application Management (Next 2-3 months)**
+- 🔄 Director recruitment system
+- 🔄 Fellow application portal
+- 🔄 Application review interface
+- 🔄 Email notifications
+- 🔄 File upload handling
+
+### **Phase 4: Dashboards & Community (3-6 months)**
+- 🔄 Role-based dashboards
+- 🔄 Alumni network portal
+- 🔄 Research management system
+- 🔄 Analytics and reporting
+- 🔄 Advanced community features
+
+---
+
+## 🐛 **TROUBLESHOOTING COMMON ISSUES**
+
+### **Local Development Issues**
+```bash
+# Port already in use
+lsof -ti:3000 | xargs kill -9    # Kill process on port 3000
+npm run dev                      # Restart development server
+
+# Node modules issues
+rm -rf node_modules package-lock.json
+npm install                      # Reinstall dependencies
+
+# TypeScript errors
+npm run type-check              # Check for type errors
+# Fix errors in the code, don't ignore them
+```
+
+### **Build/Deployment Issues**
+```bash
+# Test build locally first
+cd frontend
+npm run build                   # Should complete without errors
+
+# Check Netlify build logs
+# Visit Netlify dashboard → Deploys → Click on failed deploy
+# Check build logs for specific errors
+
+# Common issues:
+# - TypeScript errors (fix in code)
+# - Missing dependencies (add to package.json)
+# - Import path errors (use relative paths)
+```
+
+### **Mobile Issues**
+```bash
+# Test on actual devices, not just browser dev tools
+# Common issues:
+# - Touch targets too small (min 44px)
+# - Text too small (min 16px)
+# - Horizontal scrolling (check container widths)
+```
+
+---
+
+## 📚 **LEARNING RESOURCES**
+
+### **Essential Reading (Priority Order)**
+1. **This README.md**: Current project status and workflow
+2. **Next.js App Router**: https://nextjs.org/docs/app
+3. **Tailwind CSS**: https://tailwindcss.com/docs
+4. **TypeScript Handbook**: https://www.typescriptlang.org/docs/
+
+### **Project-Specific Resources**
+1. **Live Website**: https://palaverinstitute.org (see what we've built)
+2. **MVP Roadmap**: `/docs/features/mvp-roadmap.md`
+3. **Director Dashboard Specs**: `/docs/features/director-dashboard.md`
+4. **Netlify Dashboard**: https://app.netlify.com (deployment monitoring)
+
+### **Learning Path for New Developers**
+```bash
+# Week 1: Understanding the Current System
+- Set up local development environment
+- Explore the live website
+- Read through existing components
+- Make a small styling change and deploy
+
+# Week 2: First Feature
+- Add a new section to an existing page
+- Create a reusable component
+- Test responsive design
+- Submit pull request
+
+# Week 3: Backend Integration
+- Set up FastAPI locally
+- Connect a simple API endpoint
+- Test full-stack functionality
+- Work with database models
+
+# Week 4: Complex Feature
+- Work on application system
+- Implement user authentication
+- Create dashboard components
+- Add comprehensive testing
+```
+
+---
+
+## 🔐 **SECURITY & BEST PRACTICES**
+
+### **Frontend Security**
+```typescript
+// ✅ Always validate user input
+function ContactForm() {
+  const [email, setEmail] = useState('');
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Client-side validation
+    if (!email || !email.includes('@')) {
+      setError('Please enter a valid email');
+      return;
+    }
+    
+    // Submit to API
+    submitContactForm({ email });
+  };
+}
+
+// ✅ Use TypeScript for type safety
+interface User {
+  id: string;
+  email: string;
+  role: 'admin' | 'director' | 'fellow' | 'alumni';
+}
+```
+
+### **Backend Security (Future)**
+```python
+# ✅ Always use type hints and validation
+from pydantic import BaseModel, EmailStr
+from typing import Optional
+
+class UserCreate(BaseModel):
+    email: EmailStr
+    password: str
+    role: Optional[str] = "fellow"
+    
+    class Config:
+        # Validate assignment
+        validate_assignment = True
+```
+
+---
+
+## 🤝 **TEAM COLLABORATION**
+
+### **Code Review Process**
+1. **Create Feature Branch**: `git checkout -b feature/your-feature`
+2. **Develop and Test**: Ensure code works locally
+3. **Push Branch**: `git push origin feature/your-feature`
+4. **Create Pull Request**: Target `mvp-branch` for new features
+5. **Code Review**: At least one team member reviews
+6. **Merge**: After approval and tests pass
+
+### **Communication**
+- **GitHub Issues**: Track bugs and feature requests
+- **Pull Requests**: Code review and discussion
+- **Documentation**: Keep this guide updated
+- **Commit Messages**: Use conventional commits (feat:, fix:, docs:)
+
+### **Quality Standards**
+```bash
+# Before submitting any code:
+npm run lint        # No linting errors
+npm run type-check  # No TypeScript errors
+npm run build       # Build succeeds
+# Test on mobile device
+# Test on live site after deployment
+```
+
+---
+
+## 🆘 **GETTING HELP**
+
+### **When You're Stuck**
+1. **Check this documentation** - most answers are here
+2. **Look at existing code** - follow established patterns
+3. **Check GitHub issues** - someone may have faced this before
+4. **Test on the live site** - see how it currently works
+5. **Ask the team** - create a GitHub issue or discussion
+
+### **Emergency Procedures**
+```bash
+# If you break the live site
+git checkout main
+git revert HEAD~1              # Revert last commit
+git push origin main           # Fixes live site immediately
+
+# If build is failing
+# Check Netlify dashboard for error logs
+# Fix locally first, then push
+```
+
+---
+
+## 🎉 **WELCOME TO THE TEAM!**
+
+You're joining a project that's already **live and successful**:
+- ✅ **Professional website** serving the global community
+- ✅ **Modern tech stack** with best practices
+- ✅ **Clear documentation** and development workflow
+- ✅ **Meaningful mission** - building intellectual sovereignty for Africa
+
+### **Your First Tasks**
+1. **Set up local environment** and run the website
+2. **Explore the live site** at https://palaverinstitute.org
+3. **Read the MVP roadmap** to understand where we're heading
+4. **Make your first contribution** - even a small improvement counts
+5. **Join our development branch** - `mvp-branch` is where the action happens
+
+**We're building something important together - the intellectual infrastructure for African independence. Welcome aboard!** 🌍
+
+---
+
+*Last updated: October 23, 2025 - Post successful deployment and MVP branch setup*
+*Questions? Create a GitHub issue or reach out to the development team.*
