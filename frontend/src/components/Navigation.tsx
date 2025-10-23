@@ -85,13 +85,15 @@ export function Navigation() {
       // If we're on the same page, scroll smoothly
       if (!path || pathname === path) {
         e.preventDefault();
-        const element = document.getElementById(anchor);
-        if (element) {
-          const offsetTop = element.offsetTop - 80; // Account for fixed navbar
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+        if (anchor) {
+          const element = document.getElementById(anchor);
+          if (element) {
+            const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
         }
         setIsMobileMenuOpen(false);
       }
