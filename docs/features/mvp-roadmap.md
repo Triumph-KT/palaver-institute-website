@@ -255,8 +255,8 @@ Database: Local PostgreSQL/SQLite
 
 ### Staging Environment
 ```bash
-# Pre-production testing
-Frontend: https://staging-palaverinstitute.vercel.app
+# Pre-production testing (when implemented)
+Frontend: https://staging--palaverinstitute.netlify.app
 Backend: https://staging-api.palaverinstitute.org
 Database: Staging PostgreSQL
 ```
