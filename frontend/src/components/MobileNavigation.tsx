@@ -12,7 +12,7 @@
 
 import { useEffect } from 'react';
 
-export function MobileNavigation() {
+export function MobileNavigation(): null {
   useEffect(() => {
     // Mobile Navigation Toggle (exact copy from script.js lines 3-18)
     const hamburger = document.querySelector('.hamburger');
@@ -44,6 +44,9 @@ export function MobileNavigation() {
         });
       };
     }
+    
+    // Return cleanup function even if elements not found
+    return () => {};
   }, []);
 
   useEffect(() => {
