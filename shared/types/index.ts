@@ -612,27 +612,5 @@ export type Without<T, K> = Pick<T, Exclude<keyof T, K>>;
 // =============================================================================
 // EXPORT ALL TYPES
 // =============================================================================
-
-export type {
-  User,
-  UserProfile,
-  Degree,
-  Application,
-  ApplicationReference,
-  FileUpload,
-  School,
-  Lab,
-  Publication,
-  PublicationAuthor,
-  LabMember,
-  ContactSubmission,
-  DashboardStats,
-  ActivityItem,
-  ApiResponse,
-  AuthResponse,
-  PaginatedResponse,
-  LoginForm,
-  RegisterForm,
-  ApplicationForm,
-  ContactForm
-};
+// Note: Individual interfaces are already exported above, 
+// so no need to re-export them here to avoid conflicts
