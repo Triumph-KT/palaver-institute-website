@@ -1,12 +1,10 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Custom CSS Variables for Palaver Institute */
 :root {
-    /* Palaver Institute Brand Colors - Inspired by African Heritage */
+    /* Legacy CSS variables for gradual migration */
     --primary-orange: #C17A47;
     --secondary-orange: #D4924F;
     --accent-blue: #4A6B8A;
