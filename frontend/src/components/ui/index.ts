@@ -3,6 +3,16 @@
 
 export { Button } from './Button';
 export { Card } from './Card';
+export { ErrorBoundary, withErrorBoundary } from './ErrorBoundary';
+export {
+  LoadingSpinner,
+  PageLoading,
+  SectionLoading,
+  CardLoading,
+  TableLoading,
+  InlineLoading,
+  LoadingOverlay,
+} from './Loading';
 
 // TODO: Uncomment as additional components are created
 // export { Input } from './Input';
@@ -10,7 +20,6 @@ export { Card } from './Card';
 // export { Table } from './Table';
 // export { Badge } from './Badge';
 // export { Avatar } from './Avatar';
-// export { Skeleton } from './Skeleton';
 
 // Re-export types
 export type { ButtonProps } from './Button';
@@ -22,6 +31,15 @@ export type {
   CardTitleProps,
   CardDescriptionProps 
 } from './Card';
+export type {
+  LoadingSpinnerProps,
+  PageLoadingProps,
+  SectionLoadingProps,
+  CardLoadingProps,
+  TableLoadingProps,
+  InlineLoadingProps,
+  LoadingOverlayProps,
+} from './Loading';
 
 // TODO: Uncomment as additional component types are created
 // export type { InputProps } from './Input';

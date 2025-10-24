@@ -14,6 +14,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { Button } from '@/components/ui';
 
 // Utility function for email validation (exact copy from original script.js)
 function isValidEmail(email: string): boolean {
@@ -111,43 +112,60 @@ export function ContactForm() {
   return (
     <>
       {/* Contact Form */}
-      <div className="contact-form">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Your Name" 
-              required 
-            />
+      <div className="bg-white rounded-xl p-8 shadow-lg">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Your Name" 
+                required 
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-palaver-orange-500 focus:border-transparent transition-colors"
+              />
+            </div>
+            <div>
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Your Email" 
+                required 
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-palaver-orange-500 focus:border-transparent transition-colors"
+              />
+            </div>
           </div>
-          <div className="form-group">
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Your Email" 
-              required 
-            />
-          </div>
-          <div className="form-group">
+          
+          <div>
             <input 
               type="text" 
               name="subject" 
               placeholder="Subject" 
               required 
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-palaver-orange-500 focus:border-transparent transition-colors"
             />
           </div>
-          <div className="form-group">
+          
+          <div>
             <textarea 
               name="message" 
               placeholder="Your Message" 
               rows={5} 
               required
-            ></textarea>
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-palaver-orange-500 focus:border-transparent transition-colors resize-vertical"
+            />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Send Message
-          </button>
+          
+          <div>
+            <Button 
+              type="submit" 
+              variant="solid" 
+              color="primary" 
+              size="lg"
+              fullWidth
+            >
+              Send Message
+            </Button>
+          </div>
         </form>
       </div>
 

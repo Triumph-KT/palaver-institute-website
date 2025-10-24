@@ -13,12 +13,18 @@ import { Brain } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-african-sunset">
+    <section 
+      id="home" 
+      className="relative min-h-screen flex items-center pt-20"
+      style={{
+        background: 'linear-gradient(135deg, #C17A47 0%, #4A6B8A 50%, #7A5B8A 100%)'
+      }}
+    >
       {/* Background overlay for better text readability */}
       <div className="absolute inset-0 bg-black/10"></div>
       
       {/* Main hero content */}
-      <div className="relative z-10 container-custom">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left column - Text content */}
@@ -36,14 +42,14 @@ export function Hero() {
             {/* Call-to-action buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
-                href="/research" 
-                className="btn btn-primary bg-white text-palaver-orange-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                href="#research" 
+                className="inline-flex items-center justify-center bg-white text-palaver-orange-500 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 Explore Research
               </Link>
               <Link 
                 href="#contact" 
-                className="btn btn-secondary border-2 border-white text-white hover:bg-white hover:text-palaver-orange-primary px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200"
+                className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-palaver-orange-500 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200"
               >
                 Join the Palaver
               </Link>
@@ -59,9 +65,9 @@ export function Hero() {
               </div>
               
               {/* Floating elements for visual interest */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full animate-pulse-slow"></div>
-              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-white/15 rounded-full animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 -right-8 w-8 h-8 bg-white/25 rounded-full animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-white/15 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 -right-8 w-8 h-8 bg-white/25 rounded-full animate-pulse delay-2000"></div>
             </div>
           </div>
         </div>
