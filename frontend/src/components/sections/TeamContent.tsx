@@ -314,6 +314,100 @@ export function TeamContent() {
           </div>
         </div>
       </section>
+
+      {/* University Partnerships */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Strategic Partnerships (In Development)
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Building a continental network through planned collaborations with leading African institutions by Summer 2026.
+            </p>
+          </div>
+
+          {/* Partnerships Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card padding="lg" className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card.Header className="text-center">
+                <div className="w-16 h-16 bg-palaver-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Globe className="w-8 h-8 text-palaver-orange-600" />
+                </div>
+                <Card.Title level={4} className="text-gray-900 mb-2">University of Buea</Card.Title>
+                <h5 className="text-sm font-semibold text-palaver-orange-600 mb-4">Planned Cameroon Hub Partner</h5>
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>
+                  Building on our successful 2025 pilot study foundation. Planned to serve as the Central Africa Hub for Francophone research and cross-cultural epistemology.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+
+            <Card padding="lg" className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card.Header className="text-center">
+                <div className="w-16 h-16 bg-palaver-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Globe className="w-8 h-8 text-palaver-blue-600" />
+                </div>
+                <Card.Title level={4} className="text-gray-900 mb-2">University of Ghana</Card.Title>
+                <h5 className="text-sm font-semibold text-palaver-blue-600 mb-4">Planned West Africa Hub</h5>
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>
+                  Target partnership for Anglophone West African research, focusing on oral traditions and indigenous knowledge systems.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+
+            <Card padding="lg" className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card.Header className="text-center">
+                <div className="w-16 h-16 bg-palaver-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Globe className="w-8 h-8 text-palaver-purple-600" />
+                </div>
+                <Card.Title level={4} className="text-gray-900 mb-2">University of Rwanda</Card.Title>
+                <h5 className="text-sm font-semibold text-palaver-purple-600 mb-4">Planned East Africa Hub</h5>
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>
+                  Target partnership co-located with our Kigali headquarters, focusing on technology applications and applied mathematics research.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+
+            <Card padding="lg" className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card.Header className="text-center">
+                <div className="w-16 h-16 bg-palaver-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Globe className="w-8 h-8 text-palaver-orange-600" />
+                </div>
+                <Card.Title level={4} className="text-gray-900 mb-2">University of Cape Town</Card.Title>
+                <h5 className="text-sm font-semibold text-palaver-orange-600 mb-4">Planned Southern Africa Hub</h5>
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>
+                  Target partnership focusing on social dynamics, historical epistemology, and Ubuntu philosophy applications.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+
+            <Card padding="lg" className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card.Header className="text-center">
+                <div className="w-16 h-16 bg-palaver-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Globe className="w-8 h-8 text-palaver-blue-600" />
+                </div>
+                <Card.Title level={4} className="text-gray-900 mb-2">Mohammed VI Polytechnic</Card.Title>
+                <h5 className="text-sm font-semibold text-palaver-blue-600 mb-4">Planned North Africa Hub</h5>
+              </Card.Header>
+              <Card.Content>
+                <Card.Description>
+                  Target partnership in Morocco for Islamic-African philosophical integration and Mediterranean connections.
+                </Card.Description>
+              </Card.Content>
+            </Card>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
