@@ -1,29 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Static export for Netlify deployment
+  output: 'export',
+  trailingSlash: true,
+  
   // Enable experimental features for better performance
   experimental: {
     typedRoutes: true,
   },
   
-  // Image optimization configuration
+  // Disable image optimization for static export
   images: {
-    domains: ['localhost', 'palaverinstitute.org'],
-    formats: ['image/webp', 'image/avif'],
-  },
-  
-  // API routes configuration
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://localhost:8000/api/:path*', // Proxy to FastAPI backend
-      },
-    ];
+    unoptimized: true,
   },
   
   // Environment variables
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
     NEXT_PUBLIC_APP_NAME: 'Palaver Institute',
     NEXT_PUBLIC_APP_VERSION: '1.0.0',
   },
@@ -32,46 +24,6 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   compress: true,
-  
-  // Security headers
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
-          },
-        ],
-      },
-    ];
-  },
-  
-  // Webpack configuration for better bundling
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Optimize bundle size
-    config.optimization.splitChunks = {
-      chunks: 'all',
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    };
-    
-    return config;
-  },
 };
 
 module.exports = nextConfig;
