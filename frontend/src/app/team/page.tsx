@@ -9,6 +9,7 @@ import { Navigation, Footer } from '@/components/layout';
 import { Contact } from '@/components/sections';
 import { TeamHero } from '@/components/sections/TeamHero';
 import { TeamContent } from '@/components/sections/TeamContent';
+import { FoundingFellows } from '@/components/sections/FoundingFellows';
 import { ErrorBoundary } from '@/components/ui';
 
 export default function Team() {
@@ -28,6 +29,10 @@ export default function Team() {
           
           <ErrorBoundary context="Team Content">
             <TeamContent />
+          </ErrorBoundary>
+          
+          <ErrorBoundary context="Founding Fellows">
+            <FoundingFellows />
           </ErrorBoundary>
           
           <ErrorBoundary context="Contact Section">

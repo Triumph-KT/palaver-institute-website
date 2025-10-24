@@ -13,3 +13,4 @@ export { StoryContent } from './StoryContent';
 // Team page sections  
 export { TeamHero } from './TeamHero';
 export { TeamContent } from './TeamContent';
+export { FoundingFellows } from './FoundingFellows';

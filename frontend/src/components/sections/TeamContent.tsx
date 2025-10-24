@@ -15,10 +15,51 @@ interface Achievement {
 
 const founderAchievements: Achievement[] = [
   { icon: Lightbulb, text: 'Conceived the Indigenous Intelligence Lab framework' },
-  { icon: Target, text: 'Designed and executed the successful Cameroon pilot' },
-  { icon: Users, text: 'Mentored 10 founding fellows across 8 academic disciplines' },
+  { icon: Target, text: 'Self-funded the proof-of-concept with <$1,000' },
+  { icon: Users, text: 'Mentored 10 fellows to produce 250+ pages of research' },
   { icon: Globe, text: 'Established partnerships with 5 African universities' },
-  { icon: Award, text: 'Validated the model with under $1,000 investment' },
+  { icon: Award, text: 'Validated the model with exceptional quality results' },
+];
+
+interface ResearchDirector {
+  name: string;
+  title: string;
+  credentials: string[];
+  description: string;
+  contributions: string[];
+}
+
+const researchDirectors: ResearchDirector[] = [
+  {
+    name: 'Priscile Nkenmeza Nzonbi',
+    title: 'Research Director',
+    credentials: [
+      'Computer Science, Ashesi University',
+      'Mastercard Scholar',
+      'Bilingual (French/English)'
+    ],
+    description: 'Priscile played a crucial role in bridging linguistic divides and coordinating the pilot study. As a native French speaker proficient in English, she facilitated communication across Cameroon\'s linguistic regions and provided supplementary mentorship to fellows. She synthesized the mothers\' reports from French-speaking regions, contributing vital community perspectives to the research.',
+    contributions: [
+      'Participant recruitment coordination',
+      'French-English linguistic bridge',
+      'Community research synthesis'
+    ]
+  },
+  {
+    name: 'Patience Sombang',
+    title: 'Research Director',
+    credentials: [
+      'Computer Science, Ashesi University',
+      'Mastercard Scholar',
+      'Operational Excellence'
+    ],
+    description: 'Patience provided essential operational leadership for the pilot study, managing logistical coordination and communication systems. Her technical background in Computer Science and experience as a Mastercard Scholar brought valuable organizational skills to the project. She conducted community interviews in English-speaking regions and provided crucial mentorship support to fellows.',
+    contributions: [
+      'Logistical coordination',
+      'Communication management',
+      'Fellow mentorship support'
+    ]
+  }
 ];
 
 interface TeamStructureItem {
@@ -133,6 +174,65 @@ export function TeamContent() {
               </div>
             </div>
           </Card>
+        </div>
+      </section>
+
+      {/* Research Directors */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Research Directors
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Two exceptional Mastercard Scholars and Computer Science graduates from Ashesi University 
+              who served as operational coordinators for the Cameroon pilot.
+            </p>
+          </div>
+
+          {/* Directors Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {researchDirectors.map((director) => (
+              <Card key={director.name} padding="lg" className="h-full">
+                <Card.Header className="text-center">
+                  <div className="w-20 h-20 bg-palaver-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <User className="w-10 h-10 text-palaver-blue-600" />
+                  </div>
+                  <Card.Title level={3} className="text-gray-900 mb-2">
+                    {director.name}
+                  </Card.Title>
+                  <h4 className="text-lg font-semibold text-palaver-blue-600 mb-4">
+                    {director.title}
+                  </h4>
+                  <div className="space-y-1 text-sm text-gray-600 mb-6">
+                    {director.credentials.map((credential, index) => (
+                      <p key={index}>{credential}</p>
+                    ))}
+                  </div>
+                </Card.Header>
+
+                <Card.Content>
+                  <Card.Description className="leading-relaxed mb-6">
+                    {director.description}
+                  </Card.Description>
+
+                  <div>
+                    <h5 className="text-sm font-semibold text-gray-900 mb-3">Key Contributions:</h5>
+                    <div className="space-y-2">
+                      {director.contributions.map((contribution, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-palaver-blue-500 rounded-full flex-shrink-0"></div>
+                          <span className="text-sm text-gray-700">{contribution}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Card.Content>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
